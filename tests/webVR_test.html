@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <title>WebVR Test</title>
+  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <!-- Asset Management -->
+    <a-assets>
+      <!-- Material | Rock -->
+      <img id="rock" src="textures/Rock_CliffVolcanic_ao.jpg">
+      <img id="rock-NRM" src="textures/Rock_CliffVolcanic_normal.jpg">
+      <img id="rock-RGH" src="textures/Rock_CliffVolcanic_roughness.jpg">
+      <!-- Images -->
+      <img id="drawing1" src="images/Drawings.jpg">
+      <img id="drawing2" src="images/Drawings2.jpg">
+      <!-- Models -->
+      <a-asset-item id="Village" src="models/castle_village_scene/scene.gltf"></a-asset-item>
+      <a-asset-item id="zima-obj" src="models/15k-zima/15k-zima.obj"></a-asset-item>
+      <a-asset-item id="zima-mtl" src="models/15k-zima/15k-zima.mtl"></a-asset-item>
+    </a-assets>
+
+    <!-- Box -->
+    <a-box color="#FF5733" width="1" height="2" depth="0.5" position="-1 0.5 -3" rotation="0 45 0">
+      <!-- Circle | Child -->
+      <a-circle color="#333333" side="double" radius="0.5" position="0 0 1" rotation="90 0 0">
+      </a-circle>
+    </a-box>
+
+    <!-- Sphere -->
+    <a-sphere material="color: #CACACA; src: #rock; repeat: 2 2; normal-map: #rock-NRM; normal-texture-repeat: 2 2;
+    normal-scale: 0.5 0.5; roughness: #rock-RGH; roughness-texture-repeat: 2 2" position="0 1.25 -5" radius="1.25">
+    </a-sphere>
+
+    <!-- Sphere Flat -->
+    <a-sphere material="color: #57BDE9; shader: flat; opacity: 0.5" radius="0.5" position="0 3.5 -5"></a-sphere>
+
+    <!-- Cylinder -->
+    <a-cylinder color="#FFC65D" side="double" radius="0.5" height="1.5" position="1 0.75 -3" segments-radial="6"
+      open-ended="true" scale="1 0.5 1">
+    </a-cylinder>
+
+    <!-- Plane -->
+    <a-plane color="#7BC8A4" position="0 0 -4" rotation="-90 0 0" width="4" height="4"></a-plane>
+
+    <!-- Image | 1:2 -->
+    <a-image src="#drawing1" position="-2 1 -2" width="1" height="2" rotation="0 0 0" scale="1 1 1"></a-image>
+
+    <!-- Curved Image -->
+    <a-curvedimage src="#drawing2" theta-length="90" theta-start="135" radius="0.707" height="2" position="-2 3 -2">
+    </a-curvedimage>
+
+    <!-- Sky -->
+    <a-sky color="#CFF0FF"></a-sky>
+
+    <!-- Camera -->
+    <a-entity position="0 0 5">
+      <a-camera user-height="1.6" active="true"></a-camera>
+    </a-entity>
+
+    <!-- GLTF Model | Village -->
+    <a-entity gltf-model="#Village" position="4 -0.1 -4"></a-entity>
+
+    <!-- OBJ Model | Cat -->
+    <a-entity obj-model="obj: #zima-obj; mtl: #zima-mtl" position="0 1 3" scale="1 1 1"></a-entity>
+
+  </a-scene>
+</body>
+
+</html>
