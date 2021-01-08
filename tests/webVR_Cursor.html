@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cursor Interaction</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script>
+        AFRAME.registerComponent('refresh-obj',{
+            init: function(){
+                this.el.addEventListener('click', function(){
+                    var myCursor = document.querySelector('myCursor');
+                    myCursor.components.raycaster.refreshObjects();
+                })
+            }
+        })
+    </script>
+</head>
+<body>
+    <a-scene>
+        <!-- Camera with Cursor -->
+        <a-camera>
+            <a-entity id="myCursor"
+            animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.001 0.001 0.001; to: 0.01 0.01 0.01"
+            animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 0.01 0.01 0.01; to: 0.001 0.001 0.001"
+            animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 0.01 0.01 0.01"
+            cursor="fuse: true;"
+            material="color: #C0C0C0; shader: flat"
+            position="0 0 -1"
+            scale="0.01 0.01 0.01"
+            geometry="primitive: ring"
+            raycaster="objects: .clickable">
+            </a-entity>
+        </a-camera>
+        <!-- Buttons -->
+        <a-box color="#AA0000" position="-2 0 -8" class="clickable"
+               event-set__enter="_event: mouseenter; material.color: #FF0000"
+               event-set__leave="_event: mouseleave; material.color: #AA0000"
+               event-set__targetVis="_event: click; _target: #tar1; visible: true"
+               event-set__clearClass="_event: click; class: not-clickable"
+               event-set__tarClass="_event: click; _target: #tar1; class: clickable"
+               refresh-obj>
+        </a-box>
+        <a-box color="#AA0000" position="0 0 -8" class="clickable"></a-box>
+        <a-box color="#AA0000" position="2 0 -8"></a-box>
+
+        <!-- Targets -->
+        <a-box id="tar1" color="#8DB5FF" visible="false" position="-2 2 -8" class="clickable" refresh-obj></a-box>
+        <!--a-entity id="tar1" text="value: Button 1 Clicked; transparent: true" position="-2 2 -8"></a-entity-->
+
+    </a-scene>
+</body>
+</html>

@@ -22,6 +22,20 @@
       <a-asset-item id="zima-mtl" src="models/15k-zima/15k-zima.mtl"></a-asset-item>
     </a-assets>
 
+    <!-- Lighting -->
+    <!-- Ambient Light -->
+    <a-entity light="type: ambient; color: #BBB"></a-entity>
+
+    <!-- Directional Light -->
+    <a-entity light="type: directional; color: #FFFFFF; intensity: 0.6; castShadow: true" position="-0.5 1 1"></a-entity>
+
+    <!-- Point Light -->
+    <a-entity light="type: point; color: #FF02E4; intensity: 0.8; distance: 10; castShadow: true" position="0 3 0"></a-entity>
+
+    <!-- Spot Light -->
+    <a-entity light="type: spot; target: #cylinder; color: #FF1D1D; angle: 30; penumbra: 0.1; castShadow: ture" position="2 4 2"
+    animation="property: light.intensity; from: 0.8; to: 0.1; loop: true; dir: alternate; dur: 2000"></a-entity>
+
     <!-- Box -->
     <a-box color="#FF5733" width="1" height="2" depth="0.5" position="-1 0.5 -3" rotation="0 45 0">
       <!-- Circle | Child -->
@@ -31,19 +45,22 @@
 
     <!-- Sphere -->
     <a-sphere material="color: #CACACA; src: #rock; repeat: 2 2; normal-map: #rock-NRM; normal-texture-repeat: 2 2;
-    normal-scale: 0.5 0.5; roughness: #rock-RGH; roughness-texture-repeat: 2 2" position="0 1.25 -5" radius="1.25">
+    normal-scale: 0.5 0.5; roughness: #rock-RGH; roughness-texture-repeat: 2 2" position="0 1.25 -5" radius="1.25"
+    shadow="cast: true">
     </a-sphere>
 
     <!-- Sphere Flat -->
-    <a-sphere material="color: #57BDE9; shader: flat; opacity: 0.5" radius="0.5" position="0 3.5 -5"></a-sphere>
+    <a-sphere material="color: #57BDE9; shader: flat; opacity: 0.5" radius="0.5" position="0 3.5 -5"
+              animation="property: position; to: 0 8 -5; dur: 2000; easing: linear; loop: true; dir: alternate">
+    </a-sphere>
 
     <!-- Cylinder -->
-    <a-cylinder color="#FFC65D" side="double" radius="0.5" height="1.5" position="1 0.75 -3" segments-radial="6"
-      open-ended="true" scale="1 0.5 1">
+    <a-cylinder id="cylinder" color="#FFC65D" side="double" radius="0.5" height="1.5" position="1 0.75 -3" segments-radial="12"
+      open-ended="true" scale="1 0.5 1" shadow="cast: true">
     </a-cylinder>
 
     <!-- Plane -->
-    <a-plane color="#7BC8A4" position="0 0 -4" rotation="-90 0 0" width="4" height="4"></a-plane>
+    <a-plane color="#7BC8A4" position="0 0 -4" rotation="-90 0 0" width="4" height="4" shadow="receive: true"></a-plane>
 
     <!-- Image | 1:2 -->
     <a-image src="#drawing1" position="-2 1 -2" width="1" height="2" rotation="0 0 0" scale="1 1 1"></a-image>
