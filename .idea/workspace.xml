@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a2d8981-46bc-47bb-935a-f3b38c9e6a87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/webVR_Cursor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/webVR_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/webVR_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
+        <option value="package.json" />
         <option value="HTML File" />
       </list>
     </option>
@@ -48,6 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="liveEdit" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -60,6 +63,13 @@
       <option name="presentableId" value="Default" />
       <updated>1610074217087</updated>
       <workItem from="1610074218214" duration="7483000" />
+      <workItem from="1610166360893" duration="150000" />
+      <workItem from="1611104792231" duration="1866000" />
+      <workItem from="1611783821879" duration="3701000" />
+      <workItem from="1612050368495" duration="841000" />
+      <workItem from="1612477660300" duration="3323000" />
+      <workItem from="1612543818273" duration="2559000" />
+      <workItem from="1612675037277" duration="1870000" />
     </task>
     <servers />
   </component>
@@ -76,6 +86,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="624" y="0" width="912" height="824" key="SettingsEditor" timestamp="1610074552353">

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Most Basic Super-Hands Example</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
+</head>
+
+<body>
+<a-scene>
+    <a-assets></a-assets>
+    <a-entity progressive-controls poairion="0 0 5"></a-entity>
+
+    <a-box id="red" color="#AA0000" position="-1.5 0 -7" clickable
+           event-set__start="_event: grab-start; _target: #red; material.color: #00AA00"
+           event-set__end="_event grab-end; _target: #red; material.color: #AA0000">
+    </a-box>
+</a-scene>
+</body>
+</html>

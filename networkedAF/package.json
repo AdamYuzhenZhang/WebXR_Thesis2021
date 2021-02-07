@@ -1,0 +1,12 @@
+{
+  "name": "networkedAF",
+  "version": "1.0.0",
+  "description": "Multi-user VR Project",
+  "scripts": {
+    "start": "node ./server/index.js"
+  },
+  "author": "Adam Yuzhen Zhang",
+  "dependencies": {
+    "networked-aframe": "^0.7.1"
+  }
+}
