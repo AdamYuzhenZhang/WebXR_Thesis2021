@@ -33,7 +33,7 @@
             </a-entity>
         </a-camera>
         <!-- Buttons -->
-        <a-box color="#AA0000" position="-2 0 -8" class="clickable"
+        <a-box id="button1" color="#AA0000" position="-2 0 -8" class="clickable"
                event-set__enter="_event: mouseenter; material.color: #FF0000"
                event-set__leave="_event: mouseleave; material.color: #AA0000"
                event-set__targetVis="_event: click; _target: #tar1; visible: true"
@@ -41,11 +41,43 @@
                event-set__tarClass="_event: click; _target: #tar1; class: clickable"
                refresh-obj>
         </a-box>
-        <a-box color="#AA0000" position="0 0 -8" class="clickable"></a-box>
-        <a-box color="#AA0000" position="2 0 -8"></a-box>
+        <a-box id="button2" color="#AA0000" position="0 0 -8" class="clickable"
+               event-set__enter="_event: mouseenter; material.color: #FF0000"
+               event-set__leave="_event: mouseleave; material.color: #AA0000"
+               event-set__targetCol="_event: click; _target: #tar2; material.color: #AA0000"
+               event-set__clearClass="_event: click; class: not-clickable"
+               event-set__tarClass="_event: click; _target: #tar2; class: clickable"
+               refresh-obj>
+        </a-box>
+        <a-box id="button3" color="#AA0000" position="2 0 -8" class="clickable"
+               event-set__enter="_event: mouseenter; material.color: #FF0000"
+               event-set__leave="_event: mouseleave; material.color: #AA0000"
+               event-set__targetLoc="_event: click; _target: #tar3; position: 2 4 -8"
+               event-set__clearClass="_event: click; class: not-clickable"
+               event-set__tarClass="_event: click; _target: #tar3; class: clickable"
+               refresh-obj>
+        </a-box>
 
         <!-- Targets -->
-        <a-box id="tar1" color="#8DB5FF" visible="false" position="-2 2 -8" class="clickable" refresh-obj></a-box>
+        <a-box id="tar1" color="#8DB5FF" visible="false" position="-2 2 -8" class="not-clickable"
+               event-set__enter="_event: mouseenter; material.color: #A4C4FF"
+               event-set__leave="_event: mouseleave; material.color: #8DB5FF"
+               event-set__targetVis="_event: click; visible: false"
+               event-set__clearClass="_event: click; class: not-clickable"
+               event-set__tarClass="_event: click; _target: #button1; class: clickable"
+               refresh-obj></a-box>
+        <a-box id="tar2" color="#FFFF82" position="0 2 -8" class="not-clickable"
+               event-set__targetCol="_event: click; material.color: #FFFF82"
+               event-set__clearClass="_event: click; class: not-clickable"
+               event-set__tarClass="_event: click; _target: #button2; class: clickable"
+               refresh-obj></a-box>
+        <a-box id="tar3" color="#73C1FF" position="2 2 -8" class="not-clickable"
+               event-set__enter="_event: mouseenter; material.color: #A5D7FF"
+               event-set__leave="_event: mouseleave; material.color: #73C1FF"
+               event-set__targetLoc="_event: click; position: 2 2 -8"
+               event-set__clearClass="_event: click; class: not-clickable"
+               event-set__tarClass="_event: click; _target: #button3; class: clickable"
+               refresh-obj></a-box>
         <!--a-entity id="tar1" text="value: Button 1 Clicked; transparent: true" position="-2 2 -8"></a-entity-->
 
     </a-scene>
